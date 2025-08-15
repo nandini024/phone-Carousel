@@ -1,0 +1,300 @@
+@import "tailwindcss";
+
+/* globals.css */
+.bg-industry {
+  background-image: url('/IndustryBg.jpg');
+}
+.animate-scroll {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  gap: 16px;
+}
+
+.animate-scrollLap {
+  display: flex;
+  animation: scrollLap 30s linear infinite !important;
+  gap: 16px;
+}
+
+
+/* PUZZLE  */
+/* Hide scrollbar for all browsers */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+
+
+/* ======================= */
+/* CLIENT CAROUSEL STYLES  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================= */
+
+
+
+
+/* RESPONSIVENESS ...... */
+/* 1. Override Tailwind's theme breakpoints */
+@layer theme {
+  :root {
+    /* Your custom breakpoints */
+    --breakpoint-xs: 360px;
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 640px;
+    --breakpoint-lg: 768px;
+    --breakpoint-xl: 1024px;
+    --breakpoint-2xl: 1280px;
+    --breakpoint-3xl: 1536px;
+ 
+    /* Map them to Tailwind's internal vars */
+    --tw-breakpoint-sm: var(--breakpoint-sm);
+    --tw-breakpoint-md: var(--breakpoint-md);
+    --tw-breakpoint-lg: var(--breakpoint-lg);
+    --tw-breakpoint-xl: var(--breakpoint-xl);
+    --tw-breakpoint-2xl: var(--breakpoint-2xl);
+    
+  }
+}
+
+
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  8% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-166px);
+  }
+  18% {
+    transform: translateX(-166px);
+  }
+  20% {
+    transform: translateX(-332px);
+  }
+  28% {
+    transform: translateX(-332px);
+  }
+  30% {
+    transform: translateX(-498px);
+  }
+  38% {
+    transform: translateX(-498px);
+  }
+  40% {
+    transform: translateX(-664px);
+  }
+  48% {
+    transform: translateX(-664px);
+  }
+  50% {
+    transform: translateX(-830px);
+  }
+  58% {
+    transform: translateX(-830px);
+  }
+  60% {
+    transform: translateX(-996px);
+  }
+  68% {
+    transform: translateX(-996px);
+  }
+  70% {
+    transform: translateX(-1162px);
+  }
+  78% {
+    transform: translateX(-1162px);
+  }
+  80% {
+    transform: translateX(-1328px);
+  }
+  88% {
+    transform: translateX(-1328px);
+  }
+  90% {
+    transform: translateX(-1494px);
+  }
+  98% {
+    transform: translateX(-1494px);
+  }
+  100% {
+    transform: translateX(-1660px);
+  }
+}
+
+
+@keyframes scrollLap {
+  0% { transform: translateX(-1494px); }
+  /* 2% { transform: translateX(-1494px); } */
+  4% { transform: translateX(-1328px); }
+  /* 5% { transform: translateX(-1328px); } */
+  /* 6% { transform: translateX(-1162px); } */
+  8% { transform: translateX(-1162px); }
+  /* 9% { transform: translateX(-996px); } */
+  /* 11% { transform: translateX(-996px); } */
+  12% { transform: translateX(-830px); }
+  /* 14% { transform: translateX(-830px); } */
+  /* 15% { transform: translateX(-664px); } */
+  16% { transform: translateX(-664px); }
+  /* 18% { transform: translateX(-498px); } */
+  20% { transform: translateX(-498px); }
+  /* 21% { transform: translateX(-332px); } */
+  /* 23% { transform: translateX(-332px); } */
+  24% { transform: translateX(-166px); }
+  /* 26% { transform: translateX(-166px); } */
+  /* 27% { transform: translateX(0); } */
+  28% { transform: translateX(0); }
+  32% { transform: translateX(-1494px); }
+  36% { transform: translateX(-1328px); }
+  40% { transform: translateX(-1162px); }
+  144% { transform: translateX(-830px); }
+  48% { transform: translateX(-664px); }
+  52% { transform: translateX(-498px); }
+  56% { transform: translateX(-166px); }
+  60% { transform: translateX(0); }
+  64% { transform: translateX(-1494px); }
+  68% { transform: translateX(-1328px); }
+  72% { transform: translateX(-1162px); }
+  76% { transform: translateX(-830px); }
+  80% { transform: translateX(-664px); }
+  84% { transform: translateX(-498px); }
+  88% { transform: translateX(-166px); }
+  94% { transform: translateX(0); }
+  100% { transform: translateX(-1494px); }
+  
+
+   /* Loop back to start */
+  
+
+}
+
+.animate-scrollLap:hover {
+  animation-play-state: paused;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .animate-scroll > div {
+    min-width: 120px;
+    height: 200px;
+  }
+  .animate-scroll img {
+    width: 120px;
+    height: 200px;
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    8% { transform: translateX(0); }
+    10% { transform: translateX(-136px); }
+    18% { transform: translateX(-136px); }
+    20% { transform: translateX(-272px); }
+    28% { transform: translateX(-272px); }
+    30% { transform: translateX(-408px); }
+    38% { transform: translateX(-408px); }
+    40% { transform: translateX(-544px); }
+    48% { transform: translateX(-544px); }
+    50% { transform: translateX(-680px); }
+    58% { transform: translateX(-680px); }
+    60% { transform: translateX(-816px); }
+    68% { transform: translateX(-816px); }
+    70% { transform: translateX(-952px); }
+    78% { transform: translateX(-952px); }
+    80% { transform: translateX(-1088px); }
+    88% { transform: translateX(-1088px); }
+    90% { transform: translateX(-1224px); }
+    98% { transform: translateX(-1224px); }
+    100% { transform: translateX(-1360px); }
+  }
+
+
+  
+}
+.left-hero{
+  background-color: oklch(97.593% 0.00604 224.239);
+}
+
+/* sm (310px - 480px) */
+@media (min-width: 310px) and (max-width: 480px) {
+  .Navbar-main {
+    background-color: #f0f0f0;
+  }
+}
+
+/* sm2 (350px - 480px) */
+@media (min-width: 350px) and (max-width: 480px) {
+  .Navbar-main {
+    background-color: #e0e0e0;
+  }
+}
+
+/* md (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .Navbar-main {
+    background-color: #d0d0f0;
+  }
+}
+
+/* mdl (769px - 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .Navbar-main {
+    background-color: #c0d0f0;
+  }
+}
+
+
